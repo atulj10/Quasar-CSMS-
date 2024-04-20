@@ -3,6 +3,7 @@
     border-radius: 20px;
     margin: 1% 0;
     border: 2px solid rgba(255, 255, 255, 0.808);
+    animation: slideIn 0.4s ease-out  ;
     transition: all 0.3s;
     &:hover{
         transform: scale(1.06);
@@ -57,3 +58,10 @@
     }
 }
 
+@keyframes slideIn {
+    0% {
+        translate: -1000px;
+        opacity: 0%;
+    }
+
+}

@@ -235,7 +235,7 @@ const Profile = () => {
         <>
             <Navbar />
             <div className='profile-container '>
-                <div>
+                <div className='animation-profile'>
                     <div>
                         <div className='flex gap-10'>
                             <h1 className='text-5xl text-white font-normal ' style={{ fontFamily: "Teko,sans-serif" }}>NAME :</h1>
@@ -282,7 +282,7 @@ const Profile = () => {
                                     </div> */}
                                 </div>
                                 <div>
-                                    <h1 className='text-white text-4xl m-10 ml-3 cursor-pointer' onClick={() => setReadPlayerList(prev => !prev)} style={{ fontFamily: "ABee Zee ,sans-serif" }}>PLAYER LIST &nbsp;&nbsp;<FontAwesomeIcon icon={readPlayerList ? faAngleUp : faAngleDown} /></h1>
+                                    <h1 className={`text-white text-4xl m-10 ml-3 cursor-pointer`} onClick={() => setReadPlayerList(prev => !prev)} style={{ fontFamily: "ABee Zee ,sans-serif" }}>PLAYER LIST &nbsp;&nbsp;<FontAwesomeIcon icon={readPlayerList ? faAngleUp : faAngleDown} /></h1>
                                     {readPlayerList &&
                                         <div>
                                             {players.map((p) =>
