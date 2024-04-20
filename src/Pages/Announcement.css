@@ -1,0 +1,119 @@
+.announcement-container {
+    z-index: 100;
+}
+
+.main-announcement-container {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 39%, rgba(252, 252, 252, 0.569) 63%);
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding: 0 15%;
+}
+
+.cards .red {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+}
+
+.cards .blue {
+    background-color: #3b82f6;
+}
+
+.cards .green {
+    background-color: #22c55e;
+}
+
+.cards .card {
+    display: flex;
+    padding: 7%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100px;
+    width: 100%;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 400ms;
+    border: 2px solid white;
+    animation: slideIn 0.75s ease-in-out;
+}
+
+.announcement-heading {
+    animation: comeIn 1s;
+}
+
+.cards .card p.tip {
+    font-size: 2em;
+    font-weight: 700;
+    margin: 10px;
+}
+
+.cards .card p.second-text {
+    font-size: 1.5rem;
+}
+
+.cards .card:hover {
+    transform: scale(1.1, 1.1);
+    /* backdrop-filter: blur(10px); */
+    background-color: white;
+    color: black;
+}
+
+.cards:hover>.card:not(:hover) {
+    /* filter: blur(10px); */
+    transform: scale(0.9, 0.9);
+}
+
+.card .date {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+}
+
+.update-announcement {
+    border: 2px solid green;
+    color: green;
+    padding: 3% 5%;
+    margin-top: 10%;
+    transition: all 0.3;
+    &:hover {
+        background-color: green;
+        color: black;
+    }
+}
+
+.delete-announcement {
+    border: 2px solid red;
+    color: red;
+    padding: 3% 5%;
+    margin-top: 10%;
+    transition: all 0.3;
+    &:hover {
+        background-color: red;
+        color: black;
+    }
+}
+
+.announcement-input{
+    animation: comeIn 1s  ease-in-out;
+    margin-bottom: 7%;
+}
+
+
+/* ======================================================================================================================
+====================================================================================================================== */
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-1000px);
+    }
+
+}

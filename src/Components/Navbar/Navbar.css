@@ -1,0 +1,62 @@
+.nav-container {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    width: 100%;
+    z-index: 100;
+    cursor: pointer;
+
+    &:hover {
+        .non-hover {
+            transform: scale(0);
+        }
+
+        .hover {
+            transform: scale(1);
+        }
+    }
+}
+
+.logo {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    color: aqua;
+}
+
+.hover {
+    position: fixed;
+    top: 10px;
+    left: 38%; 
+    display: flex; 
+    gap: 10px;
+    border: 2px solid aqua;
+    padding:0.5% 2%;
+    color: aqua;
+    border-radius: 30px;
+    transform: scale(0);
+    transition: all 0.3s;
+}
+
+.non-hover {
+    position: fixed;
+    cursor: pointer;
+    top: 10px; 
+    left: 50%;
+    display: flex;
+    border: 2px solid aqua;
+    /* transform: scale(1); */
+    color: aqua;
+    padding: 0.5% 1%;
+    border-radius: 30px;
+    transition: all 0.2s;
+}
+
+.link>h1{
+    &:hover{
+        color: white;
+    }
+}
+

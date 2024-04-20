@@ -1,0 +1,45 @@
+.player-container{
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 2%;
+    border-radius: 20px;
+    margin: 1% 0;
+}
+
+.read{
+    color: aqua;
+    border: 2px solid aqua;
+    padding:0.5% 1%;
+    margin: 1% 0.5%;
+    font-weight: 600;
+    transition: all 0.2s;
+    &:hover{
+        background-color: aqua;
+        color: black;
+    }
+}
+
+.update{
+    color: rgb(163, 255, 127);
+    border: 2px solid rgb(163, 255, 127);
+    padding:0.5% 1%;
+    margin: 1% 0.5%;
+    font-weight: 600;
+    transition: all 0.2s;
+    &:hover{
+        background-color: rgb(163, 255, 127);
+        color: black;
+    }
+}
+
+.delete{
+    color: red;
+    border: 2px solid red;
+    padding:0.5% 1%;
+    margin: 1% 0.5%;
+    font-weight: 600;
+    transition: all 0.2s;
+    &:hover{
+        background-color: red;
+        color: black;
+    }
+}

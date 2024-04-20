@@ -1,0 +1,250 @@
+/* =================================================HOME============================================================
+================================================================================================================== */
+.home-container {
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    padding: 7%;
+    background: transparent;
+}
+
+.home-container :nth-child(2)>button {
+    margin: 5px;
+    border: 2px rgb(63, 223, 223) solid;
+    color: rgb(63, 223, 223);
+    padding: 1.5% 6.5%;
+    z-index: 2;
+    transition: all 0.3s;
+
+    &:hover {
+        border: 2px aqua solid;
+        background-color: rgb(63, 223, 223);
+        color: black;
+    }
+}
+
+.main-1 {
+    opacity: 1;
+    animation: comeIn 1s ease-in-out;
+}
+
+.banner {
+    transform: scale(1.5);
+    opacity: 1;
+    animation: slideIn 1.5s ease-in-out;
+    aspect-ratio: 2/3;
+    height: 50%;
+    position: absolute;
+    right: 10%;
+    top: 30%;
+    mix-blend-mode: multiply;
+    z-index: 20;
+    object-fit: contain;
+}
+
+.motto {
+    position: relative;
+    left: -10%;
+    color: rgb(175, 172, 172);
+    word-spacing: 15px;
+    z-index: 1;
+    opacity: 1;
+    animation: slideIn 2s ease-in-out;
+}
+
+.drop-fade {
+    position: absolute;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 30%, rgba(214, 213, 213, 0) 73%, rgba(0, 0, 0, 1) 95%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+}
+
+.line {
+    display: flex;
+    width: 100%;
+    color: white;
+    background-color: aqua;
+    height: 7px;
+}
+
+.line>:nth-child(1) {
+    opacity: 0.7;
+    position: relative;
+    top: 17px;
+    left: 5%;
+    transform: scale(5.5);
+    overflow: visible;
+    object-fit: contain;
+}
+
+.line>:nth-child(2) {
+    opacity: 0.7;
+    position: relative;
+    top: 17px;
+    left: 50%;
+    transform: scale(5);
+    rotate: 45deg;
+    overflow: visible;
+    object-fit: contain;
+}
+
+.line>:nth-child(3) {
+    opacity: 0.7;
+    position: relative;
+    top: 15px;
+    left: 30%;
+    transform: scale(3);
+    overflow: visible;
+    object-fit: contain;
+}
+
+.line>:nth-child(4) {
+    opacity: 0.7;
+    position: relative;
+    top: 17px;
+    left: 70%;
+    transform: scale(5);
+    overflow: visible;
+    object-fit: contain;
+}
+
+.line>:nth-child(5) {
+    opacity: 0.7;
+    position: relative;
+    top: 15px;
+    left: 80%;
+    transform: scale(4);
+    rotate: 75deg;
+    overflow: visible;
+    object-fit: contain;
+}
+
+/* =================================================ABOUT============================================================
+================================================================================================================== */
+
+.about-container {
+    z-index: 10;
+    padding: 10%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 11%, rgba(214, 213, 213, 0) 49%, rgba(0, 0, 0, 1) 76%);
+    display: flex;
+
+}
+
+.about-content {
+    padding: 0 10%;
+    margin-left: 15%;
+    align-self: center;
+}
+
+.about-animation {
+    animation: comeIn 1s ease-in;
+}
+
+.about-animation2 {
+    animation: slideInOpp 1s ease-in;
+}
+
+.about-content>h1>span {
+    color: aqua;
+}
+
+/* =================================================ABOUT============================================================
+================================================================================================================== */
+
+.announce-container {
+    padding: 10% 5%;
+    background: rgb(34, 193, 195);
+    background: linear-gradient(355deg, rgba(34, 193, 195, 0) 2%, rgba(0, 0, 0, 1) 84%, rgba(0, 2, 2, 1) 99%);
+}
+
+
+.announce-container>button {
+    color: white;
+}
+
+
+/* =================================================PROFILE==========================================================
+================================================================================================================== */
+
+.profile-container {
+    height: 100%;
+    padding: 8% 5%;
+    backdrop-filter: brightness(70%);
+}
+
+.playerForm>input {
+    background-color: #212121;
+    max-width: 500px;
+    width: 100%;
+    margin: 1%;
+    height: 40px;
+    padding: 10px;
+    color: whitesmoke;
+    /* text-align: center; */
+    border: 2px solid white;
+    border-radius: 5px;
+    /* box-shadow: 3px 3px 2px rgb(249, 255, 85); */
+}
+
+.playerForm>input:focus {
+    color: rgb(0, 255, 255);
+    background-color: #212121;
+    outline-color: rgb(0, 255, 255);
+    box-shadow: -3px -3px 15px rgb(0, 255, 255);
+    transition: .1s;
+    transition-property: box-shadow;
+}
+
+.playerForm>button {
+    color: aqua;
+    border: 2px solid aqua;
+    padding: 0.5% 1%;
+    margin: 1% 0.5%;
+    font-weight: 600;
+    transition: all 0.2s;
+
+    &:hover {
+        background-color: aqua;
+        color: white;
+    }
+}
+
+.create-player{
+    width: 100%;
+}
+
+/* 
+====================================================================================================================
+==================================================================================================================== */
+
+@keyframes slideIn {
+    0% {
+        translate: 1000px;
+        opacity: 0%;
+    }
+
+}
+
+@keyframes slideInOpp {
+    0% {
+        translate: -600px;
+        opacity: 0%;
+    }
+
+}
+
+@keyframes comeIn {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}

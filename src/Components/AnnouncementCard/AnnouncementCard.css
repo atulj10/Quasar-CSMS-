@@ -1,0 +1,13 @@
+.card-container{
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid white;
+    padding:4% 2%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px aqua;
+    transition: all 0.3s;
+    &:hover{
+        transform: scale(1.05);
+        box-shadow: 1px 1px 20px aqua;
+    }
+}
