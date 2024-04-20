@@ -44,42 +44,42 @@ const PlayerCard = ({ id, name, phone, description, social, team, year, achievem
     return (
         <div className='player-container'>
             <div className='flex gap-5'>
-                <h1 className='text-2xl text-white font-normal'>Name : </h1>
-                <h1 className='text-2xl text-teal-300 self-center '>{name}</h1>
+                <h1 className='text-2xl text-white font-normal bold'>Name : </h1>
+                <h1 className='text-2xl text-teal-300 self-center  content'>{name}</h1>
             </div>
 
             {read && (
                 <>
                     <div className='flex gap-2'>
-                    <h1 className='text-2xl text-white font-normal'>About : </h1>
-                        <h1 className='text-2xl text-teal-300 self-center'>{description}</h1>
+                    <h1 className='text-2xl text-white font-normal bold'>About : </h1>
+                        <h1 className='text-2xl text-teal-300 self-center content'>{description}</h1>
                     </div>
                     <div className='flex gap-2'>
-                    <h1 className='text-2xl text-white font-normal'>Phone Number : </h1>
-                        <h1 className='text-2xl text-teal-300 self-center'>{phone}</h1>
+                    <h1 className='text-2xl text-white font-normal bold'>Phone Number : </h1>
+                        <h1 className='text-2xl text-teal-300 self-center content'>{phone}</h1>
                     </div>
                     <div className='flex gap-2'>
-                        <h1 className='text-2xl text-white font-normal'>Social Media : </h1>
+                        <h1 className='text-2xl text-white font-normal bold'>Social Media : </h1>
                         <div className='flex flex-col gap-2 '>
                             <button className='social text-teal-300 text-2xl '><FontAwesomeIcon icon={faInstagram} />&nbsp;&nbsp;{social.instagram}</button>
                             <button className='social text-teal-300 text-2xl '><FontAwesomeIcon icon={faTwitter} />&nbsp;&nbsp;{social.twitter}</button>
                         </div>
                     </div>
                     <div className='flex gap-2'>
-                    <h1 className='text-2xl text-white font-normal'>Team : </h1>
-                        <h1 className='text-2xl text-teal-300 self-end'>{team? team :"None"}</h1>
+                    <h1 className='text-2xl text-white font-normal bold'>Team : </h1>
+                        <h1 className='text-2xl text-teal-300 self-end content'>{team? team :"None"}</h1>
                     </div>
                     <div className='flex gap-2'>
-                    <h1 className='text-2xl text-white font-normal'>Year : </h1>
-                        <h1 className='text-2xl text-teal-300 self-end'>{year}</h1>
+                    <h1 className='text-2xl text-white font-normal bold'>Year : </h1>
+                        <h1 className='text-2xl text-teal-300 self-end content'>{year}</h1>
                     </div>
                     <div className='flex gap-2'>
-                    <h1 className='text-2xl text-white font-normal'>Base : </h1>
-                        <h1 className='text-2xl text-teal-300 self-end'>{basePrice}</h1>
+                    <h1 className='text-2xl text-white font-normal bold'>Base : </h1>
+                        <h1 className='text-2xl text-teal-300 self-end content'>{basePrice}</h1>
                     </div>
                     <div className='flex gap-2'>
-                    <h1 className='text-2xl text-white font-normal'>Leader : </h1>
-                        <h1 className='text-2xl text-teal-300 self-end'>{teamLeader ? "YES" : "NO"}</h1>
+                    <h1 className='text-2xl text-white font-normal bold'>Leader : </h1>
+                        <h1 className='text-2xl text-teal-300 self-end content'>{teamLeader ? "YES" : "NO"}</h1>
                     </div>
                 </>
             )}
@@ -87,7 +87,7 @@ const PlayerCard = ({ id, name, phone, description, social, team, year, achievem
                 <button className='read' onClick={() => setRead(prev => !prev)}>
                     {!read ? "READ MORE" : "READ LESS"}
                 </button>
-                <button className='update' onClick={handleUpdate}>UPDATE</button>
+                {/* <button className='update' onClick={handleUpdate}>UPDATE</button> */}
                 <button className='delete' onClick={() => { handleDelete({ id }) }}>DELETE</button>
             </div>
         </div>

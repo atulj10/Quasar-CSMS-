@@ -5,6 +5,7 @@
 .main-announcement-container {
     background: rgb(0, 0, 0);
     background: linear-gradient(180deg, rgba(0, 0, 0, 1) 39%, rgba(252, 252, 252, 0.569) 63%);
+    animation: linear 1s ease-in-out;
 }
 
 .cards {
@@ -30,7 +31,7 @@
 
 .cards .card {
     display: flex;
-    padding: 7%;
+    padding: 10%;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -50,13 +51,14 @@
 }
 
 .cards .card p.tip {
-    font-size: 2em;
+    font-size: 3.5rem;
     font-weight: 700;
     margin: 10px;
 }
 
 .cards .card p.second-text {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 .cards .card:hover {
@@ -83,6 +85,7 @@
     padding: 3% 5%;
     margin-top: 10%;
     transition: all 0.3;
+
     &:hover {
         background-color: green;
         color: black;
@@ -95,14 +98,15 @@
     padding: 3% 5%;
     margin-top: 10%;
     transition: all 0.3;
+
     &:hover {
         background-color: red;
         color: black;
     }
 }
 
-.announcement-input{
-    animation: comeIn 1s  ease-in-out;
+.announcement-input {
+    animation: comeIn 1s ease-in-out;
     margin-bottom: 7%;
 }
 
@@ -117,3 +121,4 @@
     }
 
 }
+

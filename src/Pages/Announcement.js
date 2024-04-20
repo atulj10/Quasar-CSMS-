@@ -7,14 +7,14 @@ import Navbar from '../Components/Navbar/Navbar';
 import Footer from '../Components/Footer/Footer';
 import { useAuth } from '../Context/auth';
 import './Announcement.css'
+import toast from 'react-hot-toast';
 
 const Announcement = () => {
-    const [start, setStart] = useState(0);
-    const [end, setEnd] = useState(2);
     const [data, setData] = useState([]);
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
     const [auth, setAuth] = useAuth()
+    const [updateId,setUpdateId]=useState("")
 
     const headers = {
         // Your headers here, including Authorization header with JWT token
@@ -48,6 +48,24 @@ const Announcement = () => {
         }
     }
 
+    const handleUpdate = async () => {
+        try {
+            const res = await axios.put(`${process.env.REACT_APP_SERVER}/api/v1/announcements/update/${updateId}`,{
+                title,
+                content
+            })
+            if(res.status==200)
+            {
+                toast.success("SuccessFully Updated")
+            }
+            setTitle("")
+            setContent("")
+            fetchData()
+        } catch (error) {
+
+        }
+    }
+
     const addAnnouncement = async (e) => {
 
         e.preventDefault()
@@ -75,7 +93,7 @@ const Announcement = () => {
             const year = date.getFullYear();
             const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based, so add 1
             const day = date.getDate().toString().padStart(2, '0');
-            
+
             const formattedDate = `${year}-${month}-${day}`;
 
             return formattedDate
@@ -89,23 +107,30 @@ const Announcement = () => {
         <div className='main-announcement-container'>
             <Navbar />
             <div className='announce-container'>
-                <h1 className='text-white text-center text-7xl mb-36 announcement-heading'>ANNOUNCEMENT</h1>
+                <h1 className='text-white text-center text-9xl mb-10 announcement-heading' style={{fontFamily:"Teko,sans-serif"}}>ANNOUNCEMENT</h1>
                 {auth?.user?.isAdmin &&
                     <div className=' announcement-input flex flex-col justify-center items-center mb-10'>
-                        <input className='input my-3' placeholder='TITLE' name='title' value={title} onChange={(e) => { setTitle(e.target.value) }} />
-                        <input className='input my-3' placeholder='CONTENT' name='content' value={content} onChange={(e) => { setContent(e.target.value) }} />
-                        <button className='w-32 self-center text-green-500 hover:text-white border-solid border-2 border-green-500 hover:bg-green-500 p-2 px-4 transition-all my-3 ' onClick={addAnnouncement}>ADD</button>
+                        <input style={{ fontFamily: "Monteserrat,sans-serif" }} className='input my-3' placeholder='TITLE' name='title' value={title} onChange={(e) => { setTitle(e.target.value) }} />
+                        <input style={{ fontFamily: "Monteserrat,sans-serif" }} className='input my-3' placeholder='CONTENT' name='content' value={content} onChange={(e) => { setContent(e.target.value) }} />
+                        <div>
+                            <button className='w-32 self-center text-green-500 hover:text-white  border-solid border-2 border-green-500 hover:bg-green-500 p-2 px-4 transition-all my-3 ' style={{ fontFamily: "Montserrat,sans-serif", fontWeight: "700", padding: "10px 15px", margin: "10px", borderRadius: "20px" }} onClick={addAnnouncement}>ADD</button>
+                            <button className='w-32 self-center text-green-500 hover:text-white  border-solid border-2 border-green-500 hover:bg-green-500 p-2 px-4 transition-all my-3 ' style={{ fontFamily: "Montserrat,sans-serif", fontWeight: "700", padding: "10px 15px", margin: "10px", borderRadius: "20px" }} onClick={handleUpdate}>UPDATE</button>
+                        </div>
                     </div>
                 }
                 <div class="cards">
                     {data.map((i) => (<div class="card red">
-                        <p class="tip text-4xl">{i.title}</p>
-                        <p class="second-text">{i.content}</p>
-                        <p className='date'>Date: {getDate(i.createdAt)}</p>
-                        <div className='flex gap-2'>
-                            <button className='update-announcement'>UPDATE</button>
-                            <button className='delete-announcement' onClick={handleDelete}>DELETE</button>
-                        </div>
+                        <p class="tip " style={{ fontFamily: "Teko,sans-serif" }}>{i.title}</p>
+                        <p class="second-text " style={{ fontFamily: "Rajdhani,sans-serif" }}>{i.content}</p>
+                        <p className='date' style={{ fontFamily: "Source Code Pro,monospace" }}>Date: {getDate(i.createdAt)}</p>
+                        {auth?.user?.isAdmin && <div className='flex gap-2'>
+                            <button className='update-announcement  transition-all' style={{ fontFamily: "Montserrat,sans-serif", fontWeight: "700", padding: "10px 15px", margin: "10px", borderRadius: "20px" }} onClick={() => {
+                                setTitle(i.title);
+                                setContent(i.content);
+                                setUpdateId(i._id)
+                            }}>UPDATE</button>
+                            <button className='delete-announcement  transition-all' style={{ fontFamily: "Montserrat,sans-serif", fontWeight: "700", padding: "10px 15px", margin: "10px", borderRadius: "20px" }} onClick={handleDelete}>DELETE</button>
+                        </div>}
                     </div>))}
                 </div>
             </div>

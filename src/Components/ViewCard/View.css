@@ -1,9 +1,22 @@
 .player-container{
-    background-color: rgba(255, 255, 255, 0.4);
     padding: 2%;
     border-radius: 20px;
     margin: 1% 0;
+    border: 2px solid rgba(255, 255, 255, 0.808);
+    transition: all 0.3s;
+    &:hover{
+        transform: scale(1.06);
+        background-color: white;
+        .bold{
+            color: black;
+            font-weight: 500;
+        }
+        .content{
+            font-weight: 500;
+        }
+    }
 }
+
 
 .read{
     color: aqua;
@@ -43,3 +56,4 @@
         color: black;
     }
 }
+

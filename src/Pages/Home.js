@@ -11,6 +11,8 @@ import Announcement from './Announcement'
 import Footer from '../Components/Footer/Footer'
 import Navbar from '../Components/Navbar/Navbar'
 import { useAuth } from '../Context/auth'
+import Gallary from './Gallary'
+import Gallery from './Gallary'
 
 const Home = () => {
     const [auth, setAuth] = useAuth()
@@ -24,19 +26,19 @@ const Home = () => {
             <div className='home-container flex justify-between'>
                 <div className='main-1 text flex flex-col  text-white z-10'>
                     <div className='mb-44'>
-                        <p className='text-5xl mb-5 text-teal-300 ' style={{fontFamily:"ABeeZee, sans-serif"}}>IIIT Ranchi Sport</p>
-                        <h1 className='text-9xl font-normal' style={{fontFamily:"Rajdhani, sans-serif"}}>LET THE GAME <br /> BEGINS</h1>
+                        <p className='text-4xl text-teal-300 ' style={{ fontFamily: "ABeeZee, sans-serif" }}>IIIT Ranchi Sport</p>
+                        <h1 className='text-7xl font-normal' style={{ fontFamily: "Rajdhani, sans-serif" }}>LET THE GAME <br /> BEGIN</h1>
                     </div>
                     <div className='main-2 flex flex-col text-white'>
-                        <p className='text-2xl'>This is a website that present the IIIT Ranchi <br />Sports community.</p>
-                        <div className='flex justify-center mt-3'>
+                        <p className='text-2xl self-start' style={{ fontFamily: "Montserrat,sans-sarif" }}>This is a website that present the IIIT Ranchi <br />Sports community.</p>
+                        {/* <div className='flex justify-center mt-3'>
                             <button>Link1</button>
                             <button>Link2</button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <div className='flex z-10'>
-                    {/* <h1 className='motto text-white self-center text-8xl '>LET THE RACE<br /> BEGIN</h1> */}
+                    <h1 className='motto text-white self-center text-7xl text-center' style={{ fontFamily: "Rajdhani,sans-serif", fontWeight: "700" }}>“Overpower. Overtake.<br /> Overcome.” </h1>
                     <img className='banner ' src={image} />
                 </div>
                 <div className='drop-fade'></div>
@@ -51,9 +53,12 @@ const Home = () => {
             <div className='about-us'>
                 <About />
             </div>
-            <div className='gallary'>
-
+            <div className='flex flex-col justify-center items-center bg-black'>
+                {/* <h1 className='text-white text-9xl m-8' style={{fontFamily:"Teko,sans-serif"}}>INSTA FEED</h1> */}
+                <Gallery />
             </div>
+
+
             {/* <Footer /> */}
         </>
     )

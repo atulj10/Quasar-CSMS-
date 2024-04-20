@@ -46,24 +46,24 @@ const TeamCard = ({ id, name, players, teamLeader, purse, setTeamData, handleDel
     return (
         <div className='player-container'>
             <div className='flex gap-5'>
-                <h1 className='text-2xl text-white font-normal'>Name : </h1>
-                <h1 className='text-2xl text-teal-300 self-center'>{name}</h1>
+                <h1 className='bold text-2xl text-white font-normal' style={{fontFamily:"Montserrat,sans-serif"}}>Name : </h1>
+                <h1 className='text-2xl text-teal-300 self-center' style={{fontFamily:"Poppins,sans-serif"}}>{name}</h1>
             </div>
             {read && (<>
-                <h1 className='text-2xl text-white font-normal'>Leader : <span className='text-teal-300 text-2xl'>{leader}</span></h1>
+                <h1 className=' bold text-2xl text-white font-normal' style={{fontFamily:"Montserrat,sans-serif"}}>Leader : <span className='text-teal-300 text-2xl' style={{fontFamily:"Poppins,sans-serif"}}>{leader}</span></h1>
                 <div className='players'>
-                    <h1 className='text-white text-2xl font-normal'>Player : </h1>
+                    <h1 className='bold text-white text-2xl font-normal' style={{fontFamily:"Montserrat,sans-serif"}}>Player : </h1>
                     {playerData.map(player => (
-                        <span className='text-teal-300 text-2xl' key={player.id}>{player.name} , </span>
+                        <span className='text-teal-300 text-2xl' key={player.id} style={{fontFamily:"Poppins,sans-serif"}}>{player.name} , </span>
                     ))}
-                    <h1 className='text-2xl text-white font-normal'>Purse : <span className='text-teal-300 text-2xl'>{purse}</span></h1>
+                    <h1 className='text-2xl text-white font-normal bold' style={{fontFamily:"Montserrat,sans-serif"}}>Purse : <span className='text-teal-300 text-2xl' style={{fontFamily:"Poppins,sans-serif"}}>{purse}</span></h1>
                 </div>
             </>
             )}
             <button className='read' onClick={() => setRead(prev => !prev)}>
                 {!read ? "READ MORE" : "READ LESS"}
             </button>
-            <button className='update' onClick={handleUpdate}>UPDATE</button>
+            {/* <button className='update' onClick={handleUpdate}>UPDATE</button> */}
             <button className='delete' onClick={() => { handleDelete({ id }) }}>DELETE</button>
 
         </div>

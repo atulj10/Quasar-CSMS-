@@ -1,8 +1,7 @@
-// import axios from "axios";
 import axios from "axios";
 import { useState, useEffect, useContext, createContext } from "react";
 
-const AuthContext = createContext()
+const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
     const [auth, setAuth] = useState({
@@ -10,30 +9,37 @@ const AuthProvider = ({ children }) => {
         token: "",
     });
 
-    //default axios
-    //This is to by deafult set the header in the axios i.e. to not set it in the private route
+    useEffect(() => {
+        // Fetch user data from local storage
+        const data = JSON.parse(localStorage.getItem('auth'));
+        const token = localStorage.getItem('token');
 
-    // useEffect(() => {
-    //     const data = localStorage.getItem('auth')
-    //     if (data) {
-    //         const parseData = JSON.parse(data)
-    //         setAuth({
-    //             user: parseData.user,
-    //             token: parseData.token
-    //         })
-    //     }
+        if (data && token) {
+            // If user data and token are found in local storage, set the auth state
+            setAuth({
+                user: data,
+                token: token,
+            });
+        } else {
+            // Clear auth state if no user data or token found
+            setAuth({
+                user: null,
+                token: "",
+            });
+        }
 
-    //     //eslint-disable-next-line
-    // }, [])
+        console.log("contxt",data);
+
+        //eslint-disable-next-line
+    }, []);
 
     return (
         <AuthContext.Provider value={[auth, setAuth]}>
             {children}
         </AuthContext.Provider>
-    )
-}
+    );
+};
 
-const useAuth = () => useContext(AuthContext)
+const useAuth = () => useContext(AuthContext);
 
-export { useAuth, AuthProvider }
-
+export { useAuth, AuthProvider };

@@ -30,7 +30,8 @@ const Login = () => {
                     user: res.data.userFound,
                     token: res.data.token
                 })
-                // localStorage.setItem('auth', JSON.stringify(res.data.userFound))
+                localStorage.setItem('auth', JSON.stringify(res.data.userFound))
+                localStorage.setItem('token', JSON.stringify(res.data.token))
                 navigate("/");
             } else {
                 toast.error(res.data.message);

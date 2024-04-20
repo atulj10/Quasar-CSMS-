@@ -4,6 +4,7 @@ import Footer from '../Components/Footer/Footer'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../Context/auth'
+import './Pages.css'
 
 const Sports = () => {
     const [sports, setSports] = useState([])
@@ -26,14 +27,19 @@ const Sports = () => {
     return (
         <>
             <Navbar />
-            <div className='flex flex-col text-white p-44 text-6xl'>
+            <div className='flex flex-wrap justify-evenly items-center mt-[20%]'>
                 {
-                    sports.map((i) => (
-                    <Link><button className='text-teal-300 hover:text-white border-solid  hover:bg-teal-300  transition-all border-teal-300 border-2 p-5 my-2 w-full'>{i.name}</button></Link>
-                        
-                ))}
+                    sports.map((i) => 
+                        <div className="card">
+                            <div className="card-details">
+                                <p className="text-title text-white text-3xl">{i.name.toUpperCase()}</p>
+                                {/* <p className="text-body">Here are the details of the card</p> */}
+                            </div>
+                            <Link><button className='card-button'>{i.name}</button></Link>
+                        </div>
+                    )}
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </>
     )
 }

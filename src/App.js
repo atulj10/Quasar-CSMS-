@@ -7,6 +7,7 @@ import { useAuth } from './Context/auth';
 import Profile from './Pages/Profile';
 import Announcement from './Pages/Announcement';
 import Sports from './Pages/Sports';
+import Matches from './Pages/Matches';
 
 function App() {
   const [auth, setAuth] = useAuth()
@@ -20,6 +21,7 @@ function App() {
           <Route path='/profile' element={<Profile />} />
           <Route path='/announcement' element={<Announcement />} />
           <Route path='/sports' element={<Sports />} />
+          <Route path='/matches' element={<Matches />} />
         </>
       }
     </Routes>
